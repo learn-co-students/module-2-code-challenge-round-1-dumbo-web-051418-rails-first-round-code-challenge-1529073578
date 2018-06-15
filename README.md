@@ -2,6 +2,8 @@
 
 It's time to put our Rails know-how to the test. Today, we are asked to build an application that will be a superheroine character creator!
 
+<!--  female character creator -->
+
 ## Objectives
 + MVC
 + REST
@@ -30,7 +32,9 @@ Read through the instructions to get a sense of the scope of this code challenge
 
 1. Create the associations between models. You may have to alter the current schema to get your code working. If you've set up your relationships properly, you should be able to run `rake db:seed` without errors, and confirm in console that the heroines and powers have been created with the proper relations.
 
-2. On the heroines index page, a heroine's name should link to the heroine's show page.
+<!--  create a powers column in heroines table-->
+
+2. On the heroines index page, a heroine's name should link to the heroine's show page.  check
 
 3. The heroine show page should include the heroine's name (eg. Kamala Khan), her super name (eg. Ms. Marvel), and her power. The power should link to the power show page.  
 
