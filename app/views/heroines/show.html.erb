@@ -1,0 +1,11 @@
+<div>
+
+<h1>Super Heroine Alias: </h1>
+<%= @heroine.super_name %>
+<h1>Super Heroine Name: </h1>
+<%= @heroine.name %>
+<h1>Super Power: </h1>
+  <li><%= link_to @heroine.power_id.name, power_path(power_id) %></li>
+<!-- need to associate the power with the power_id in order to write a path that would work, realized that too late -->
+
+</div>
