@@ -1,6 +1,7 @@
 class HeroinesController < ApplicationController
 
   def index
+    flash.discard
     @heroines = Heroine.all
   end
   def search_post
@@ -8,8 +9,11 @@ class HeroinesController < ApplicationController
       @heroines = Heroine.all.select do |hero|
         hero.power.name == params[:power]
       end
-    else
-      flash[:error] = "No such superpower!"
+      if @heroines.empty?
+        flash.now[:error] = "No such superpower!"
+      else
+        @heroines
+      end
     end
     render :index
   end
