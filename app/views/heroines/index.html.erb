@@ -1,10 +1,27 @@
 <h2>All Heroines</h2>
 
+
+<b>Search by super power:</b></br>
+<%= form_tag '/', method: :post do %>
+<%= text_field_tag 'filter_by_power' %>
+<%= hidden_field_tag 'are_we_filtering', 'yes' %>
+<%= submit_tag 'Filter' %>
+<% end %></br></br>
 <ul>
-  <% @heroines.each do |heroine| %>
-    <li>
-      <%= heroine.super_name %>
-    </li>
-    <br>
-  <% end %>
+
+<!-- If there was time I would have implemented an if statement here to
+catch the queries where @heroines is nil due to the fact that the user
+inputted text that was not found to be a superpower. I would also account for
+all get requests to index to list all heroines by default since that is the
+first time that they are viewing the page. All post requests, however, would follow
+the first sentence of this comment.
+-->
+
+    <% @heroines.each do |heroine| %>
+      <li>
+        <%= link_to heroine.super_name, heroine_path(heroine) %>
+      </li>
+      <br>
+    <% end %>
+
 </ul>
