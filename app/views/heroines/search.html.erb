@@ -9,7 +9,6 @@
 
 <ul>
   <% @heroines.each do |heroine| %>
-      #An if statement to iterate heroine.power_id to match the params id 
     <li>
       <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
