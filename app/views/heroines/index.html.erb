@@ -1,9 +1,15 @@
 <h2>All Heroines</h2>
 
+<!-- Having trouble with my params passing, need to read more on this  -->
+<%= form_tag(heroines_path method: :get) do %>
+  Super Powers <%= text_field_tag :super_power, params[:super_power], placeholder: "Search Super Powers" %>
+  <%= submit_tag 'Search' %>
+<% end %>
+
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
