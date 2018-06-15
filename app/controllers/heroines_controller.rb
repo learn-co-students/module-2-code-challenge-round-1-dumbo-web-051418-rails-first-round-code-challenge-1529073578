@@ -2,10 +2,9 @@ require 'pry'
 
 class HeroinesController < ApplicationController
   def index
-
     if params[:power] && params[:power] != ""
       power = Power.find_by(name: params[:power])
-      @heroines = power.heroines
+      @heroines = power ? power.heroines : []
     else
       @heroines = Heroine.all
     end
