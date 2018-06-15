@@ -3,6 +3,6 @@
   <%= f.text_field :name %><br>
   <%= f.label :super_name, "Super Name"%><br>
   <%= f.text_field :super_name %><br>
-  <%= f.collection_select :power, Power.all, :id, :name, prompt: true %><br>
+  <%= f.collection_select :power_id, Power.all, :id, :name, prompt: true %><br>
   <%= f.submit "Create Heroine"%>
 <% end %>

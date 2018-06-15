@@ -13,9 +13,8 @@ class HeroinesController < ApplicationController
 
   #heroine_path not working
   def create
-    @heroine = Heroine.find(params[:id])
-
-    if Heroine.create(heroine_params)
+    @heroine = Heroine.new(heroine_params)
+    if @heroine.save
       redirect_to heroine_path(@heroine)
     else
       render :new
