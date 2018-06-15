@@ -1,9 +1,10 @@
 <h2>All Heroines</h2>
-
+<!-- ###new a link or button to create a new heroine
+##also a sereach functions -->
 <ul>
   <% @heroines.each do |heroine| %>
     <li>
-      <%= heroine.super_name %>
+      <%= link_to heroine.super_name, heroine_path(heroine) %>
     </li>
     <br>
   <% end %>
