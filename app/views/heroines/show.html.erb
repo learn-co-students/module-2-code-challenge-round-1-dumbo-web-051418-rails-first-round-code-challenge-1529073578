@@ -1,0 +1,8 @@
+<!-- The heroine show page should include the heroine's name (eg. Kamala Khan), her super name (eg. Ms. Marvel), and her power. The power should link to the power show page. -->
+
+<h1><%= @heroine.name%></h1>
+<b>Name:</b> <%= @heroine.super_name %><br />
+<b>Power:</b> <%= link_to @powers.find(@heroine.power_id).name,  power_path(@heroine.power_id)%>
+
+
+<!-- for seeded data, the links are working, but for new heroines it is not. i would refactor this find into a helper method for clarity -->
